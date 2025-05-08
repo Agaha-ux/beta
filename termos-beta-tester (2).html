@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Termos de Beta Tester</title>
+    <style>
+        /* Estilo geral */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #000;
+            color: #fff;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            line-height: 1.6;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        header img {
+            width: 100px;
+        }
+
+        main {
+            max-width: 800px;
+            width: 90%;
+            background-color: #1c1c1c;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(255, 255, 255, 0.1);
+        }
+
+        h1 {
+            font-size: 2rem;
+            color: #ffcc00;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        p {
+            font-size: 1rem;
+            margin-bottom: 20px;
+        }
+
+        ul {
+            margin-top: 10px;
+            padding-left: 20px;
+        }
+
+        ul li {
+            margin-bottom: 10px;
+        }
+
+        form {
+            margin-top: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 10px;
+            font-size: 1rem;
+        }
+
+        input[type="email"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: none;
+            border-radius: 5px;
+            font-size: 1rem;
+        }
+
+        input[type="checkbox"] {
+            margin-right: 10px;
+        }
+
+        button {
+            background-color: #7289da;
+            border: none;
+            color: #fff;
+            font-size: 1rem;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #ffcc00;
+            color: #000;
+        }
+
+        footer {
+            margin-top: 20px;
+            text-align: center;
+            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.6);
+        }
+
+        footer a {
+            color: #ffcc00;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        footer a:hover {
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img src="https://media-hosting.imagekit.io/a7ee2a55d0ec4a03/908a0e9a-18bc-4bf4-9416-3d70e7239bb4.png?Expires=1841280020&Key-Pair-Id=K2ZIVPTIP2VGHC&Signature=tU-LJ0eaMmHB49buTejrtxe8SmNpfnsR1q7gQpVLYEUMoNTiehPyi3d30OPPDQwpTw5anhNK7IE7rIk8J48TtGIv3mvniubEAyOdNXzHxd2if45L22o4Io5yKTkWP1-y1N8Yq~XL~FROhHfj176XYEBiDPQWDW5tCYVZVtEK-8I8gv-4TIkC-KP8ap4HaDGaZnOgV0RLnzSwbYExKCdT-xIRod7FKObgGv8xkbt5v230IQJXiL6spdgqt9nsGXd67fmFosydBC3Qv9rpIz8Al4ptPpElVObXbN7rZtlqCkrB~lxffvyjOKydKKm0rMAr7OaSj5uVBIDsbELfDfKsew__" alt="Logotipo">
+    </header>
+    <main>
+        <h1>Termos de Beta Tester</h1>
+        <p>Obrigado por participar do programa Beta Tester. Ao acessar ou utilizar este programa, você concorda com os seguintes termos:</p>
+        <ul>
+            <li><strong>Confidencialidade:</strong> Você não pode divulgar informações, capturas de tela, vídeos ou qualquer outro material relacionado ao programa.</li>
+            <li><strong>Acesso Restrito:</strong> O programa é exclusivamente para o uso pessoal do Beta Tester aprovado.</li>
+            <li><strong>Feedback:</strong> Você concorda em fornecer feedback construtivo sobre sua experiência. Este feedback será utilizado para melhorar o produto.</li>
+            <li><strong>Propriedade:</strong> Todo o conteúdo e materiais fornecidos são propriedade da empresa e não devem ser compartilhados ou utilizados fora do programa.</li>
+            <li><strong>Encerramento:</strong> A empresa reserva-se o direito de encerrar seu acesso ao programa a qualquer momento, sem aviso prévio.</li>
+        </ul>
+        <p>Se você tiver dúvidas ou preocupações, entre em contato conosco antes de continuar.</p>
+
+        <form id="termsForm" onsubmit="confirmTerms(event)">
+            <label for="email">Confirme seu e-mail:</label>
+            <input type="email" id="email" name="email" placeholder="seuemail@exemplo.com" required>
+            <label>
+                <input type="checkbox" id="acceptTerms" required>
+                Aceito os Termos de Beta Tester
+            </label>
+            <button type="submit">Confirmar</button>
+        </form>
+    </main>
+    <footer>
+        <p>© 2025 Servidor TN. Desenvolvido por <a href="https://github.com/Agaha-ux" target="_blank">Agaha-ux</a>.</p>
+    </footer>
+
+    <script>
+        function confirmTerms(event) {
+            event.preventDefault();
+
+            const emailInput = document.getElementById('email');
+            const acceptTermsCheckbox = document.getElementById('acceptTerms');
+
+            if (emailInput.value && acceptTermsCheckbox.checked) {
+                alert('Obrigado por aceitar os termos!');
+                window.close(); // Fecha a aba/janela do navegador
+            } else {
+                alert('Por favor, preencha todos os campos e aceite os termos.');
+            }
+        }
+    </script>
+</body>
+</html>
